@@ -1,8 +1,9 @@
-# AirportLockerRental
+# Airport Locker Rental
 
 ## About
-Airport Locker Rental is a simple application that lets a user manage a locker rental and item storage.
+A simple console application involving the management of locker rental
+and item storage.
 
 ## Key Features
-This code features a console application written in the C# language.
-It demonstrates the use of arrays, conditions, loops and variables.
+Written in the C# programming language.
+Demonstrates the use of arrays, conditions, loops and variables.
