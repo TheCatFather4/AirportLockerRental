@@ -17,22 +17,22 @@ namespace AirportLockerRental.Workflow
                 {
                     int number = ConsoleIO.GetLockerNumber();
 
-                    if (number == 1)
+                    if (choice == 1)
                     {
-                        // view locker
+                        mgr.ViewLocker(number);
                     }
-                    else if (number == 2)
+                    else if (choice == 2)
                     {
                         mgr.RentLocker(number);
                     }
                     else
                     {
-                        // return locker
+                        mgr.ReturnLocker(number);
                     }
                 }
                 else if (choice == 4)
                 {
-                    // print all lockers
+                    mgr.ViewAllLockers();
                 }
                 else
                 {
