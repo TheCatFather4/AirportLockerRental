@@ -16,14 +16,17 @@ namespace AirportLockerRental.Actions
             return _lockers[number - 1] == null;
         }
 
-        public LockerContents RentLocker(int number)
+        public bool RentLocker(int number, LockerContents contents)
         {
-            LockerContents contents = new LockerContents();
-
-            contents.RenterName = ConsoleIO.GetRequiredString("Enter renter name: ");
-            contents.Description = ConsoleIO.GetRequiredString("Enter item description: ");
-
-            return _lockers[number - 1] = contents;
+            if (_lockers[number - 1] == null)
+            {
+                _lockers[number - 1] = contents;
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
         }
 
         public LockerContents ReturnLocker(int number)

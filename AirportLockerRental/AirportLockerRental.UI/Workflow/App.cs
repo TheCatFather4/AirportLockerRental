@@ -32,9 +32,13 @@ namespace AirportLockerRental.Workflow
                     }
                     else if (choice == 2)
                     {
-                        if (mgr.IsAvailable(number))
+                        LockerContents contents = new LockerContents();
+
+                        contents.RenterName = ConsoleIO.GetRequiredString("Enter renter name: ");
+                        contents.Description = ConsoleIO.GetRequiredString("Enter item description: ");
+
+                        if (mgr.RentLocker(number, contents))
                         {
-                            LockerContents contents = mgr.RentLocker(number);
                             Console.WriteLine($"Locker number {number} has been rented for {contents.Description} storage.");
                         }
                         else
