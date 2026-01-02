@@ -1,48 +1,54 @@
-﻿using AirportLockerRental.DTOS;
+﻿using AirportLockerRental.UI.DTOs;
 
-namespace AirportLockerRental.Actions
+namespace AirportLockerRental.UI.Actions
 {
     public class LockerManager
     {
-        private LockerContents[] _lockers = new LockerContents[100];
+        public Locker[] Lockers { get; private set; }
 
-        public LockerContents GetLockerContents(int number)
+        public LockerManager()
         {
-            return _lockers[number - 1];
-        }
+            var lockers = new Locker[100];
 
-        public bool IsAvailable(int number)
-        {
-            return _lockers[number - 1] == null;
-        }
-
-        public bool RentLocker(int number, LockerContents contents)
-        {
-            if (_lockers[number - 1] == null)
+            for (int i = 0; i < lockers.Length; i++)
             {
-                _lockers[number - 1] = contents;
+                lockers[i] = new Locker();
+            }
+
+            Lockers = lockers;
+        }
+
+        public void EndLockerRental(int lockerNumber)
+        {
+            Lockers[lockerNumber - 1].RenterName = null;
+            Lockers[lockerNumber - 1].Contents = null;
+        }
+
+        public bool IsRented(int lockerNumber)
+        {
+            if (Lockers[lockerNumber - 1].RenterName != null)
+            {
                 return true;
             }
-            else 
-            {
-                return false;
-            }
+
+            return false;
         }
 
-        public LockerContents ReturnLocker(int number)
+        public void PrintAllLockers()
         {
-            return _lockers[number - 1] = null;
-        }
-
-        public void ViewAllLockers()
-        {
-            for (int i = 0; i < _lockers.Length; i++)
+            for (int i = 0; i < Lockers.Length; i++)
             {
-                if (_lockers[i] != null)
+                if (IsRented(i + 1))
                 {
-                    ConsoleIO.PrintLockerContents(i + 1, _lockers[i]);
+                    Printer.PrintLocker(i + 1, Lockers[i]);
                 }
             }
+        }
+
+        public void RentLocker(int lockerNumber)
+        {
+            Lockers[lockerNumber - 1].RenterName = Prompter.GetRequiredString("Enter your name: ");
+            Lockers[lockerNumber - 1].Contents = Prompter.GetRequiredString("Enter locker contents: ");
         }
     }
 }

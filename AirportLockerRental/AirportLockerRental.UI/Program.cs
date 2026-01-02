@@ -1,3 +1,4 @@
-﻿using AirportLockerRental.Workflow;
+﻿using AirportLockerRental.UI.Workflows;
 
-App.Run();
+var app = new App();
+app.Run();
