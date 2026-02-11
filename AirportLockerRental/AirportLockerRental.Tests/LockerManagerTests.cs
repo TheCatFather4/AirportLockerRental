@@ -27,5 +27,16 @@ namespace AirportLockerRental.Tests
             var result = mgr.IsRented(1);
             Assert.That(result, Is.True);
         }
+
+        [Test]
+        public void EndRental_Success()
+        {
+            var mgr = GetLockerManager();
+            mgr.Lockers[0].RenterName = "Renter";
+            mgr.Lockers[0].Contents = "Stuff";
+            mgr.EndLockerRental(1);
+            Assert.That(mgr.Lockers[0].RenterName, Is.Null);
+            Assert.That(mgr.Lockers[0].Contents, Is.Null);
+        }
     }
 }
