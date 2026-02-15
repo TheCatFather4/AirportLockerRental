@@ -1,4 +1,5 @@
 ﻿using AirportLockerRental.UI.Actions;
+using AirportLockerRental.UI.DTOs;
 
 namespace AirportLockerRental.UI.Workflows
 {
@@ -44,7 +45,11 @@ namespace AirportLockerRental.UI.Workflows
                         }
                         else
                         {
-                            mgr.RentLocker(lockerChoice);
+                            Locker locker = new Locker();
+                            locker.RenterName = Prompter.GetRequiredString("Enter your name: ");
+                            locker.Contents = Prompter.GetRequiredString("Enter locker contents: ");
+
+                            mgr.RentLocker(lockerChoice, locker);
                             Console.WriteLine($"\nLocker {lockerChoice} has been rented for {mgr.Lockers[lockerChoice - 1].Contents} storage.");
                         }
 

@@ -45,10 +45,10 @@ namespace AirportLockerRental.UI.Actions
             }
         }
 
-        public void RentLocker(int lockerNumber)
+        public void RentLocker(int lockerNumber, Locker locker)
         {
-            Lockers[lockerNumber - 1].RenterName = Prompter.GetRequiredString("Enter your name: ");
-            Lockers[lockerNumber - 1].Contents = Prompter.GetRequiredString("Enter locker contents: ");
+            Lockers[lockerNumber - 1].RenterName = locker.RenterName;
+            Lockers[lockerNumber - 1].Contents = locker.Contents;
         }
     }
 }
