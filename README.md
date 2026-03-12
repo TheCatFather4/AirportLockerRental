@@ -1,9 +1,9 @@
-# Airport Locker Rental
+# :airplane: Airport Locker Rental :lock: :key:
 
 <img width="225" height="225" alt="airport" src="https://github.com/user-attachments/assets/8314fc58-49a4-4814-b941-9f2152ec9983" />
 
 ## About
-A console application that involves the management of locker rentals for an airport.<br>
+This is a console application that involves the management of locker rentals for an airport.<br>
 This application demonstrates some fundamentals of both C# and Object Oriented Programming.<br>
 
 ## Key Features
@@ -13,7 +13,7 @@ This application demonstrates some fundamentals of both C# and Object Oriented P
 - An example of separation of concerns and the single resposibility principle by means of classes.<br>
 - Unit tests that check management logic.<br>
 
-## Using
+## :desktop_computer: Using
 Simply copy the repository to your local machine and open the solution with a compatible IDE.<br>
 > [!TIP]
 Visual Studio 2022 was used in building this application, so I recommend using that.<br>
