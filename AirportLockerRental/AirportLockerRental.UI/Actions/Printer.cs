@@ -2,8 +2,16 @@
 
 namespace AirportLockerRental.UI.Actions
 {
+    /// <summary>
+    /// Prints information to the console.
+    /// </summary>
     public static class Printer
     {
+        /// <summary>
+        /// Prints a locker's information.
+        /// </summary>
+        /// <param name="lockerNumber"></param>
+        /// <param name="locker"></param>
         public static void PrintLocker(int lockerNumber, Locker locker)
         {
             Console.WriteLine($"Locker {lockerNumber}");
@@ -12,6 +20,9 @@ namespace AirportLockerRental.UI.Actions
             Console.WriteLine("====================================");
         }
 
+        /// <summary>
+        /// Prints the main menu.
+        /// </summary>
         public static void PrintMenu()
         {
             Console.WriteLine("=========================");

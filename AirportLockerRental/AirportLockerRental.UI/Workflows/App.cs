@@ -3,8 +3,14 @@ using AirportLockerRental.UI.DTOs;
 
 namespace AirportLockerRental.UI.Workflows
 {
+    /// <summary>
+    /// The workflow for the application.
+    /// </summary>
     public class App
     {
+        /// <summary>
+        /// Runs the application workflow.
+        /// </summary>
         public void Run()
         {
             int menuChoice;
