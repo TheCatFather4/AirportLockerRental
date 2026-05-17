@@ -3,15 +3,15 @@
 namespace AirportLockerRental.UI.Actions
 {
     /// <summary>
-    /// Prints information to the console.
+    /// A static class that prints information to the console.
     /// </summary>
     public static class Printer
     {
         /// <summary>
-        /// Prints a locker's information.
+        /// Prints a locker's number, renter name, and contents.
         /// </summary>
-        /// <param name="lockerNumber"></param>
-        /// <param name="locker"></param>
+        /// <param name="lockerNumber">The number of the locker to print.</param>
+        /// <param name="locker">The locker object containing the renter's name and contents.</param>
         public static void PrintLocker(int lockerNumber, Locker locker)
         {
             Console.WriteLine($"Locker {lockerNumber}");

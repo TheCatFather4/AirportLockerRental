@@ -1,7 +1,7 @@
 ﻿namespace AirportLockerRental.UI.Actions
 {
     /// <summary>
-    /// Used to prompt the user.
+    /// A static class used to prompt the user.
     /// </summary>
     public static class Prompter
     {
@@ -17,7 +17,7 @@
         /// <summary>
         /// Prompts the user to select a locker number.
         /// </summary>
-        /// <param name="prompt"></param>
+        /// <param name="prompt">A custom prompt to retrieve a locker number.</param>
         /// <returns></returns>
         public static int GetLockerNumber(string prompt)
         {
@@ -67,7 +67,7 @@
         /// <summary>
         /// Prompts the user for string input.
         /// </summary>
-        /// <param name="prompt"></param>
+        /// <param name="prompt">A custom prompt used to retrieve a string value.</param>
         /// <returns></returns>
         public static string GetRequiredString(string prompt)
         {

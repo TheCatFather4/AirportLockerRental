@@ -4,7 +4,7 @@ using AirportLockerRental.UI.DTOs;
 namespace AirportLockerRental.UI.Workflows
 {
     /// <summary>
-    /// The workflow for the application.
+    /// Represents the application running in the console window.
     /// </summary>
     public class App
     {

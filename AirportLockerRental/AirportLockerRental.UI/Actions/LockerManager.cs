@@ -3,14 +3,17 @@
 namespace AirportLockerRental.UI.Actions
 {
     /// <summary>
-    /// Used to manage the state of all the lockers.
+    /// Used to manage the state of all lockers.
     /// </summary>
     public class LockerManager
     {
+        /// <summary>
+        /// Represents the array of lockers.
+        /// </summary>
         public Locker[] Lockers { get; private set; }
 
         /// <summary>
-        /// Constructs a locker manager with an array of 100 lockers.
+        /// Initializes a LockerManager with an array of 100 lockers.
         /// </summary>
         public LockerManager()
         {
@@ -25,9 +28,9 @@ namespace AirportLockerRental.UI.Actions
         }
 
         /// <summary>
-        /// Ends a locker rental by removing the current values of the renter name and locker contents.
+        /// Ends a locker rental by setting the member values of the locker to null.
         /// </summary>
-        /// <param name="lockerNumber"></param>
+        /// <param name="lockerNumber">The locker number of the rental to end.</param>
         public void EndLockerRental(int lockerNumber)
         {
             Lockers[lockerNumber - 1].RenterName = null;
@@ -35,9 +38,9 @@ namespace AirportLockerRental.UI.Actions
         }
 
         /// <summary>
-        /// Checks to see if a locker is rented.
+        /// Checks to see if a locker is rented. Returns true if rented, false if empty.
         /// </summary>
-        /// <param name="lockerNumber"></param>
+        /// <param name="lockerNumber">The locker number to check.</param>
         /// <returns></returns>
         public bool IsRented(int lockerNumber)
         {
@@ -50,7 +53,7 @@ namespace AirportLockerRental.UI.Actions
         }
 
         /// <summary>
-        /// Prints all lockers that are rented.
+        /// Prints all rented lockers to the console.
         /// </summary>
         public void PrintAllLockers()
         {
@@ -64,10 +67,10 @@ namespace AirportLockerRental.UI.Actions
         }
 
         /// <summary>
-        /// Rents a locker by assigning a renter name and locker contents.
+        /// Rents a locker by assigning values to a locker's members.
         /// </summary>
-        /// <param name="lockerNumber"></param>
-        /// <param name="locker"></param>
+        /// <param name="lockerNumber">The number of the locker to rent.</param>
+        /// <param name="locker">A locker object that contains the renter's name and locker contents to be assigned.</param>
         public void RentLocker(int lockerNumber, Locker locker)
         {
             Lockers[lockerNumber - 1].RenterName = locker.RenterName;
